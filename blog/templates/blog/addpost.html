@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}<title>Add Post</title>{% endblock title %} 
+{% block content %}
+<div class='col-sm-10 container' >
+    <h3 class='text-white my-5 posttitle loader'> Dashboard/Update Post</h3>
+    <form action="" method='post' novalidate>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Add" class='btn btn-success'>
+        <a href="{% url 'dashboard' %}" class='btn btn-danger'>Cancel</a>
+    </form>
+    <!-- <script>var editior=new MediumEditor(.'editable')</script> -->
+</div>
+{% endblock %}

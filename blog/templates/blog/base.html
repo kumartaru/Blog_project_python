@@ -1,0 +1,65 @@
+<html lang="en">
+{% load static %}    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
+    <!-- copy from medium editior -->
+    <script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css" type="text/css"
+        media="screen" charset="utf-8">
+     
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'blog/CSS/blog.css' %}">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One" rel="stylesheet">
+    
+    {% block title %}<title>Base page</title>{% endblock title %}
+    
+</head>
+<body class='loader'>
+    <div class='container-fluid bg-white'>
+        {% include 'blog/navbar.html' %}
+    </div>
+    <div class='conatainer'>
+        <div class='row'>
+            <div class='col-sm-12'>
+                {%  block msg %}
+                {% endblock msg %}
+
+            </div>
+
+        </div>
+        <div class='row'>
+            {% block side %}
+            {% endblock side %}
+             
+            <div class='content container'>
+                <div class='row'>
+                    <div class='col-md-10'>
+                        <div class='blog_posts'>
+                            {% block content %}
+                            {% endblock content %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+
+    </div>
+
+<script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'blog/js/jquery.js' %}"></script>
+<script src="{% static 'blog/js/popper.js' %}"></script>
+</body>
+</html>
